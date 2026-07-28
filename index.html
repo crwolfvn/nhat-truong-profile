@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nguyễn Thế Nhật Trường — Supply Chain &amp; Logistics</title>
+<meta name="description" content="Brian Nguyễn — 14 năm điều phối Kế hoạch, Kho vận &amp; Chuỗi cung ứng giữa nhà máy Việt Nam và thị trường EU / US / UK.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink-navy:#0f1f33;
+    --ink-navy-deep:#0a1626;
+    --blueprint-line:#3e6e8e;
+    --blueprint-line-soft:rgba(107,166,199,0.28);
+    --paper:#ece6d6;
+    --paper-raised:#f4efe2;
+    --paper-line:#c9bfa0;
+    --stamp-red:#a63d2f;
+    --cargo-amber:#d98e2b;
+    --ink:#1b1b18;
+    --ink-soft:#4b4a42;
+    --cloud:#f7f4ea;
+    --cloud-soft:rgba(247,244,234,0.72);
+    --max:1080px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Space Grotesk', sans-serif;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+  }
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  :focus-visible{
+    outline:3px solid var(--cargo-amber);
+    outline-offset:3px;
+  }
+
+  .wrap{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* ---------- Stamp badge (recurring motif) ---------- */
+  .stamp{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:74px;
+    height:74px;
+    border-radius:50%;
+    border:2px dashed currentColor;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:9px;
+    letter-spacing:0.14em;
+    text-align:center;
+    line-height:1.3;
+    flex:none;
+  }
+
+  /* ================= HERO (blueprint) ================= */
+  .hero{
+    background:
+      radial-gradient(ellipse 900px 500px at 15% 0%, rgba(107,166,199,0.16), transparent 60%),
+      var(--ink-navy);
+    color:var(--cloud);
+    position:relative;
+    overflow:hidden;
+    padding:64px 0 88px;
+  }
+  .hero::before{
+    /* blueprint grid */
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+      linear-gradient(var(--blueprint-line-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--blueprint-line-soft) 1px, transparent 1px);
+    background-size:42px 42px;
+    mask-image:linear-gradient(to bottom, rgba(0,0,0,0.9), transparent 85%);
+    pointer-events:none;
+  }
+  .hero-inner{
+    position:relative;
+    display:grid;
+    grid-template-columns:1.2fr 0.8fr;
+    gap:48px;
+    align-items:center;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--cargo-amber);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:18px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:28px;
+    height:1px;
+    background:var(--cargo-amber);
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 5.4vw, 4.1rem);
+    font-weight:700;
+    color:var(--cloud);
+    text-transform:uppercase;
+  }
+  .hero h1 .alias{
+    display:block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.32em;
+    font-weight:500;
+    text-transform:none;
+    letter-spacing:0.02em;
+    color:var(--cloud-soft);
+    margin-top:10px;
+  }
+  .hero-role{
+    margin-top:20px;
+    font-size:1.15rem;
+    color:var(--cloud-soft);
+    max-width:46ch;
+  }
+  .hero-role strong{color:var(--cloud); font-weight:600;}
+
+  .stat-strip{
+    display:flex;
+    gap:0;
+    margin-top:40px;
+    border-top:1px solid rgba(247,244,234,0.18);
+    padding-top:22px;
+  }
+  .stat{
+    flex:1;
+    padding-right:20px;
+  }
+  .stat b{
+    display:block;
+    font-family:'Space Grotesk', sans-serif;
+    font-size:1.9rem;
+    color:var(--cargo-amber);
+  }
+  .stat span{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--cloud-soft);
+  }
+
+  .id-card{
+    background:rgba(247,244,234,0.05);
+    border:1px solid rgba(247,244,234,0.22);
+    border-radius:4px;
+    padding:20px;
+    position:relative;
+    backdrop-filter:blur(2px);
+  }
+  .id-card .frame{
+    position:relative;
+    border:1px solid rgba(247,244,234,0.3);
+  }
+  .id-card .frame::before,
+  .id-card .frame::after{
+    content:"";
+    position:absolute;
+    width:16px; height:16px;
+    border-color:var(--cargo-amber);
+    border-style:solid;
+  }
+  .id-card .frame::before{ top:-1px; left:-1px; border-width:2px 0 0 2px; }
+  .id-card .frame::after{ bottom:-1px; right:-1px; border-width:0 2px 2px 0; }
+  .id-card img{ width:100%; filter:grayscale(12%) contrast(1.03); }
+
+  .id-meta{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    margin-top:14px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
+    letter-spacing:0.06em;
+    color:var(--cloud-soft);
+  }
+  .id-meta .stamp{
+    color:var(--cargo-amber);
+    width:56px; height:56px;
+    font-size:7.5px;
+    transform:rotate(-9deg);
+  }
+
+  /* ================= TRADE LANES (signature) ================= */
+  .lanes{
+    background:var(--ink-navy-deep);
+    color:var(--cloud);
+    padding:70px 0 80px;
+    position:relative;
+  }
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:16px;
+    margin-bottom:34px;
+    flex-wrap:wrap;
+  }
+  .section-head h2{
+    font-size:clamp(1.5rem, 3vw, 2.1rem);
+    text-transform:uppercase;
+  }
+  .lanes .section-head h2{ color:var(--cloud); }
+  .section-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--blueprint-line);
+    border:1px solid var(--blueprint-line);
+    padding:3px 10px;
+    border-radius:20px;
+  }
+  .lane-copy{
+    max-width:60ch;
+    color:var(--cloud-soft);
+    margin-bottom:36px;
+  }
+  .lane-svg-wrap{ width:100%; }
+  .lane-svg-wrap svg{ width:100%; height:auto; overflow:visible; }
+  .lane-path{
+    fill:none;
+    stroke:var(--blueprint-line);
+    stroke-width:1.6;
+    stroke-dasharray:6 7;
+    animation:dash 3.6s linear infinite;
+  }
+  @keyframes dash{ to{ stroke-dashoffset:-130; } }
+  .lane-node-ring{ fill:none; stroke:var(--cargo-amber); stroke-width:1.4; }
+  .lane-node-dot{ fill:var(--cargo-amber); }
+  .lane-hub-ring{ fill:none; stroke:var(--cloud); stroke-width:1.6; }
+  .lane-hub-dot{ fill:var(--cloud); }
+  .lane-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    fill:var(--cloud);
+  }
+  .lane-sub{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
+    fill:var(--cloud-soft);
+  }
+  .lane-hub-label{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:600;
+    font-size:15px;
+    fill:var(--cloud);
+  }
+
+  .lane-legend{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:20px;
+    margin-top:36px;
+  }
+  .lane-legend div{
+    border-top:1px solid rgba(247,244,234,0.2);
+    padding-top:12px;
+  }
+  .lane-legend h3{
+    font-size:0.95rem;
+    color:var(--cargo-amber);
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    margin-bottom:6px;
+  }
+  .lane-legend p{
+    margin:0;
+    font-size:0.88rem;
+    color:var(--cloud-soft);
+  }
+
+  /* ================= CAREER MANIFEST (timeline) ================= */
+  .manifest{
+    padding:80px 0;
+    background:var(--paper);
+  }
+  .manifest .section-head h2{ color:var(--ink); }
+  .manifest .section-tag{
+    color:var(--stamp-red);
+    border-color:var(--stamp-red);
+  }
+  .manifest-copy{
+    max-width:65ch;
+    color:var(--ink-soft);
+    margin-bottom:44px;
+  }
+
+  .timeline{
+    border-top:1px solid var(--paper-line);
+  }
+  .t-row{
+    display:grid;
+    grid-template-columns:190px 26px 1fr;
+    gap:0 22px;
+    padding:26px 0;
+    border-bottom:1px solid var(--paper-line);
+    align-items:start;
+  }
+  .t-date{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.92rem;
+    color:var(--stamp-red);
+    padding-top:2px;
+  }
+  .t-date small{
+    display:block;
+    color:var(--ink-soft);
+    font-size:0.72rem;
+    margin-top:3px;
+  }
+  .t-line{ position:relative; display:flex; justify-content:center; }
+  .t-line::before{
+    content:"";
+    width:9px; height:9px;
+    border-radius:50%;
+    background:var(--stamp-red);
+    margin-top:6px;
+  }
+  .t-role h3{
+    font-size:1.18rem;
+    margin-bottom:6px;
+  }
+  .t-role .t-desc{
+    color:var(--ink-soft);
+    font-size:0.96rem;
+    max-width:70ch;
+  }
+  .t-current{
+    display:inline-block;
+    margin-left:10px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10px;
+    letter-spacing:0.1em;
+    color:var(--stamp-red);
+    border:1px solid var(--stamp-red);
+    border-radius:20px;
+    padding:2px 8px;
+    vertical-align:middle;
+  }
+  .t-bullets{
+    margin:14px 0 0;
+    padding:0;
+    list-style:none;
+    display:grid;
+    gap:8px;
+  }
+  .t-bullets li{
+    font-size:0.92rem;
+    color:var(--ink-soft);
+    padding-left:18px;
+    position:relative;
+  }
+  .t-bullets li::before{
+    content:"—";
+    position:absolute;
+    left:0;
+    color:var(--cargo-amber);
+    font-family:'IBM Plex Mono', monospace;
+  }
+
+  /* ---- Earlier chapters ---- */
+  .earlier{
+    margin-top:56px;
+  }
+  .earlier-head{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:20px;
+  }
+  .earlier-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+  }
+  .earlier-card{
+    background:var(--paper-raised);
+    border:1px solid var(--paper-line);
+    padding:24px;
+    border-radius:2px;
+  }
+  .earlier-card .dur{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--cargo-amber);
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+  }
+  .earlier-card h3{
+    font-size:1.05rem;
+    margin:8px 0 10px;
+  }
+  .earlier-card ul{
+    margin:0; padding:0; list-style:none;
+    display:grid; gap:7px;
+  }
+  .earlier-card li{
+    font-size:0.88rem;
+    color:var(--ink-soft);
+    padding-left:16px;
+    position:relative;
+  }
+  .earlier-card li::before{
+    content:"—";
+    position:absolute; left:0;
+    color:var(--stamp-red);
+    font-family:'IBM Plex Mono', monospace;
+  }
+
+  /* ================= CAPABILITIES (ledger) ================= */
+  .capabilities{
+    padding:80px 0 90px;
+    background:var(--paper-raised);
+    border-top:1px solid var(--paper-line);
+    border-bottom:1px solid var(--paper-line);
+  }
+  .capabilities .section-head h2{ color:var(--ink); }
+  .capabilities .section-tag{
+    color:var(--blueprint-line);
+    border-color:var(--blueprint-line);
+  }
+  .ledger{
+    display:grid;
+    gap:0;
+  }
+  .ledger-item{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    padding:14px 0;
+    border-bottom:1px dotted var(--paper-line);
+  }
+  .ledger-item .num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    color:var(--stamp-red);
+    flex:none;
+    width:26px;
+  }
+  .ledger-item .name{
+    font-weight:600;
+    flex:none;
+    min-width:230px;
+  }
+  .ledger-item .fill{
+    flex:1;
+    border-bottom:1px dotted var(--paper-line);
+    margin:0 4px;
+    transform:translateY(-5px);
+  }
+  .ledger-item .detail{
+    font-size:0.88rem;
+    color:var(--ink-soft);
+    text-align:right;
+    flex:none;
+    max-width:44%;
+  }
+
+  /* ================= FOOTER ================= */
+  footer{
+    background:var(--ink-navy);
+    color:var(--cloud);
+    padding:56px 0 40px;
+  }
+  .footer-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    flex-wrap:wrap;
+    gap:32px;
+  }
+  footer h2{
+    font-size:1.5rem;
+    text-transform:uppercase;
+    margin-bottom:8px;
+  }
+  footer p{
+    color:var(--cloud-soft);
+    max-width:44ch;
+    margin:0;
+  }
+  .contact-list{
+    list-style:none;
+    margin:0; padding:0;
+    display:grid;
+    gap:12px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.92rem;
+  }
+  .contact-list a{
+    color:var(--cargo-amber);
+    text-decoration:none;
+    border-bottom:1px solid transparent;
+  }
+  .contact-list a:hover, .contact-list a:focus-visible{
+    border-bottom-color:var(--cargo-amber);
+  }
+  .foot-note{
+    margin-top:40px;
+    padding-top:20px;
+    border-top:1px solid rgba(247,244,234,0.15);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--cloud-soft);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+
+  /* ================= RESPONSIVE ================= */
+  @media (max-width: 860px){
+    .hero-inner{ grid-template-columns:1fr; }
+    .id-card{ max-width:340px; }
+    .lane-legend{ grid-template-columns:1fr; }
+    .earlier-grid{ grid-template-columns:1fr; }
+    .t-row{ grid-template-columns:110px 20px 1fr; }
+    .ledger-item{ flex-wrap:wrap; }
+    .ledger-item .detail{ max-width:100%; text-align:left; flex-basis:100%; }
+    .ledger-item .fill{ display:none; }
+  }
+  @media (max-width: 560px){
+    .stat-strip{ flex-wrap:wrap; }
+    .stat{ flex:1 1 45%; margin-bottom:14px; }
+    .t-row{ grid-template-columns:1fr; gap:6px; }
+    .t-line{ display:none; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .lane-path{ animation:none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <div class="eyebrow">Planning · Warehouse · Logistics</div>
+      <h1>Nguyễn Thế Nhật Trường<span class="alias">Brian Nguyễn</span></h1>
+      <p class="hero-role">
+        <strong>14 năm</strong> điều phối dòng chảy nguyên vật liệu, thành phẩm và thông tin —
+        từ sàn nhà máy mô hình nhựa tại Việt Nam đến các đối tác chuỗi cung ứng ở
+        <strong>EU, US &amp; UK</strong>. Xây kho từ số 0, dựng công cụ hoạch định, và giữ cho hàng luôn đến đúng hẹn.
+      </p>
+
+      <div class="stat-strip">
+        <div class="stat"><b>10</b><span>Năm Kế hoạch &amp; Kho vận</span></div>
+        <div class="stat"><b>6</b><span>Lần mở rộng / dời kho</span></div>
+        <div class="stat"><b>3</b><span>Châu lục kết nối chuỗi cung ứng</span></div>
+        <div class="stat"><b>4</b><span>Tháng dự báo mỗi chu kỳ</span></div>
+      </div>
+    </div>
+
+    <div class="id-card">
+      <div class="frame">
+        <img src="assets/profile.png" alt="Ảnh chân dung Nguyễn Thế Nhật Trường">
+      </div>
+      <div class="id-meta">
+        <div>
+          <div>PLANNING &amp; LOGISTICS MANAGER</div>
+          <div>VIETNAM · SINCE 2013</div>
+        </div>
+        <div class="stamp">KEY&nbsp;ERP<br>USER</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= TRADE LANES (signature diagram) ================= -->
+<section class="lanes">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Tuyến hàng phụ trách</h2>
+      <span class="section-tag">Trade Lanes</span>
+    </div>
+    <p class="lane-copy">
+      Mỗi vai trò đều xoay quanh một tuyến kết nối: nguyên liệu đi vào nhà máy, thành phẩm đi ra thế giới,
+      và chứng từ đi theo đúng luồng hải quan.
+    </p>
+
+    <div class="lane-svg-wrap">
+      <svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sơ đồ tuyến hàng: Nhà máy Việt Nam kết nối với EU, US/UK và cảng biển/hàng không">
+        <path class="lane-path" d="M170,150 C 340,60 520,50 700,60" />
+        <path class="lane-path" d="M170,150 C 360,150 520,150 700,150" />
+        <path class="lane-path" d="M170,150 C 340,240 520,250 700,240" />
+
+        <circle class="lane-hub-ring" cx="150" cy="150" r="26"/>
+        <circle class="lane-hub-dot" cx="150" cy="150" r="4"/>
+        <text class="lane-hub-label" x="150" y="200" text-anchor="middle">VIETNAM</text>
+        <text class="lane-sub" x="150" y="216" text-anchor="middle">FACTORY · WAREHOUSE</text>
+
+        <circle class="lane-node-ring" cx="720" cy="60" r="16"/>
+        <circle class="lane-node-dot" cx="720" cy="60" r="3.5"/>
+        <text class="lane-label" x="742" y="65">EU SUPPLY CHAIN</text>
+        <text class="lane-sub" x="742" y="80">Finished goods hand-off</text>
+
+        <circle class="lane-node-ring" cx="720" cy="150" r="16"/>
+        <circle class="lane-node-dot" cx="720" cy="150" r="3.5"/>
+        <text class="lane-label" x="742" y="155">US / UK CUSTOMERS</text>
+        <text class="lane-sub" x="742" y="170">Furniture &amp; garden pottery</text>
+
+        <circle class="lane-node-ring" cx="720" cy="240" r="16"/>
+        <circle class="lane-node-dot" cx="720" cy="240" r="3.5"/>
+        <text class="lane-label" x="742" y="245">SEA / AIR PORT</text>
+        <text class="lane-sub" x="742" y="260">Customs clearance</text>
+      </svg>
+    </div>
+
+    <div class="lane-legend">
+      <div>
+        <h3>Nhà máy → EU</h3>
+        <p>Phối hợp cùng đội Supply Chain tại EU để chuyển thành phẩm từ Việt Nam đúng lịch, đúng chuẩn.</p>
+      </div>
+      <div>
+        <h3>Nhà máy → US / UK</h3>
+        <p>Quản lý dịch vụ khách hàng cho nội — ngoại thất và gốm sân vườn, từ báo giá đến giao hàng.</p>
+      </div>
+      <div>
+        <h3>Nhà máy → Cảng</h3>
+        <p>Điều phối thủ tục hải quan xuất — nhập khẩu và vận chuyển nội địa từ / đến cảng biển, sân bay.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CAREER MANIFEST ================= -->
+<section class="manifest">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Hành trình sự nghiệp</h2>
+      <span class="section-tag">Manifest</span>
+    </div>
+    <p class="manifest-copy">
+      10 năm gắn bó với một công ty duy nhất, đi từ người trực tiếp kiểm đếm hàng trong kho đến người
+      hoạch định năng lực sản xuất và báo cáo cho Ban lãnh đạo Tập đoàn.
+    </p>
+
+    <div class="timeline">
+      <div class="t-row">
+        <div class="t-date">2017 – 2018<small>17 tháng</small></div>
+        <div class="t-line"></div>
+        <div class="t-role">
+          <h3>Warehouse Team Leader</h3>
+          <p class="t-desc">Trực tiếp quản lý ghi nhận biến động Nguyên vật liệu / Bán thành phẩm / Thành phẩm trong kho.</p>
+        </div>
+      </div>
+
+      <div class="t-row">
+        <div class="t-date">2018 – 2019<small>12 tháng</small></div>
+        <div class="t-line"></div>
+        <div class="t-role">
+          <h3>Warehouse Supervisor</h3>
+          <p class="t-desc">Giám sát kiểm kê định kỳ hàng tháng, hàng quý, hàng năm; điều phối kho qua các lần mở rộng nhà xưởng.</p>
+        </div>
+      </div>
+
+      <div class="t-row">
+        <div class="t-date">2020 – 2021<small>15 tháng</small></div>
+        <div class="t-line"></div>
+        <div class="t-role">
+          <h3>Warehouse Manager</h3>
+          <p class="t-desc">Chịu trách nhiệm toàn bộ hệ thống kho — xây dựng từ đầu và dời kho 5 lần theo đà phát triển của công ty, từ 1 lên 6 tòa nhà.</p>
+        </div>
+      </div>
+
+      <div class="t-row">
+        <div class="t-date">2021 – 2026<small>Hiện tại</small></div>
+        <div class="t-line"></div>
+        <div class="t-role">
+          <h3>Planning &amp; Logistics Manager <span class="t-current">CURRENT</span></h3>
+          <p class="t-desc">Hoạch định và điều phối toàn bộ chuỗi cung ứng nội bộ nhà máy.</p>
+          <ul class="t-bullets">
+            <li>Quản lý nguyên vật liệu cho sản xuất từ Mua hàng Nội địa &amp; Nước ngoài, đảm bảo sẵn sàng đúng tiến độ</li>
+            <li>Kết nối với đội Supply Chain tại EU để điều phối Thành phẩm từ Việt Nam sang EU</li>
+            <li>Xây dựng Công cụ Hoạch định hàng tháng dự báo 4 tháng tới và phân tích phân bổ năng lực sản xuất</li>
+            <li>Thành viên Key User của hệ thống ERP đầu tiên (BaaN) từ công ty mẹ — đào tạo và hỗ trợ các phòng ban khác</li>
+            <li>Tham gia đội Key User xây dựng và kiểm thử hệ thống ERP mới</li>
+            <li>Chuẩn bị báo cáo định kỳ cho Ban lãnh đạo Tập đoàn: sản lượng hàng ngày, tồn đọng &amp; dự án mở hàng tuần, tình trạng sản xuất so với mục tiêu năm, chi phí vận chuyển hàng không hàng tháng</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="earlier">
+      <div class="earlier-head">Trước đó — 4 năm nền tảng</div>
+      <div class="earlier-grid">
+        <div class="earlier-card">
+          <div class="dur">2 năm</div>
+          <h3>US / UK Customer Service Supervisor</h3>
+          <p style="font-size:0.9rem;color:var(--ink-soft);margin:0 0 10px;">Ngành nội — ngoại thất &amp; gốm sân vườn</p>
+          <ul>
+            <li>Xây dựng gian hàng tại hội chợ thương mại trong nước và quốc tế để tìm khách hàng mới</li>
+            <li>Làm việc sát với đội Sản xuất từ Nhà cung cấp để tùy chỉnh sản phẩm theo yêu cầu</li>
+            <li>Theo dõi từ Báo giá, Đơn hàng, Đặt cọc, Giao hàng đến Thanh toán cho đến khi hoàn tất lô hàng</li>
+            <li>Giữ liên lạc với khách hàng để nhận phản hồi, xử lý vấn đề phát sinh và nhận đơn hàng mới</li>
+          </ul>
+        </div>
+        <div class="earlier-card">
+          <div class="dur">2 năm</div>
+          <h3>Customs Broker &amp; Local Transport</h3>
+          <p style="font-size:0.9rem;color:var(--ink-soft);margin:0 0 10px;">Dịch vụ khai báo hải quan &amp; vận chuyển nội địa</p>
+          <ul>
+            <li>Thực hiện thủ tục hải quan cho lô hàng xuất / nhập khẩu theo yêu cầu</li>
+            <li>Giữ liên lạc với khách hàng để chuẩn bị đầy đủ chứng từ cần thiết</li>
+            <li>Điều phối vận chuyển nội địa từ / đến cảng biển và sân bay</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CAPABILITIES ================= -->
+<section class="capabilities">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Công cụ &amp; năng lực</h2>
+      <span class="section-tag">Tooling</span>
+    </div>
+
+    <div class="ledger">
+      <div class="ledger-item">
+        <span class="num">01</span>
+        <span class="name">ERP Systems</span>
+        <span class="fill"></span>
+        <span class="detail">BaaN Corp · Asseco Applus — key user, đào tạo &amp; kiểm thử hệ thống mới</span>
+      </div>
+      <div class="ledger-item">
+        <span class="num">02</span>
+        <span class="name">Warehouse Build-out</span>
+        <span class="fill"></span>
+        <span class="detail">Dựng hệ thống kho từ đầu, mở rộng &amp; dời kho 5 lần qua các giai đoạn tăng trưởng</span>
+      </div>
+      <div class="ledger-item">
+        <span class="num">03</span>
+        <span class="name">Capacity &amp; Forecasting</span>
+        <span class="fill"></span>
+        <span class="detail">Công cụ hoạch định hàng tháng, dự báo 4 tháng, phân tích phân bổ năng lực</span>
+      </div>
+      <div class="ledger-item">
+        <span class="num">04</span>
+        <span class="name">Cross-border Coordination</span>
+        <span class="fill"></span>
+        <span class="detail">Làm việc với Supply Chain EU, khách hàng US/UK, và thủ tục hải quan SEA/AIR</span>
+      </div>
+      <div class="ledger-item">
+        <span class="num">05</span>
+        <span class="name">Executive Reporting</span>
+        <span class="fill"></span>
+        <span class="detail">Báo cáo ngày / tuần / tháng cho Ban lãnh đạo Tập đoàn</span>
+      </div>
+      <div class="ledger-item">
+        <span class="num">06</span>
+        <span class="name">Office &amp; Logic</span>
+        <span class="fill"></span>
+        <span class="detail">Kỹ năng tin học văn phòng tốt, tư duy logic vững</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div>
+        <h2>Kết nối</h2>
+        <p>Luôn sẵn sàng trao đổi về cơ hội trong Kế hoạch, Kho vận &amp; Chuỗi cung ứng.</p>
+      </div>
+      <ul class="contact-list">
+        <li><a href="https://www.linkedin.com/in/ntntruong/" target="_blank" rel="noopener">linkedin.com/in/ntntruong</a></li>
+        <li><a href="mailto:your-email@example.com">your-email@example.com</a></li>
+        <li>Việt Nam</li>
+      </ul>
+    </div>
+    <div class="wrap foot-note" style="padding:0;">
+      <span>© 2026 Nguyễn Thế Nhật Trường</span>
+      <span>Planning · Warehouse · Logistics</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Respect reduced-motion preference for the trade-lane animation
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.lane-path').forEach(function(p){ p.style.animation = 'none'; });
+  }
+</script>
+</body>
+</html>
