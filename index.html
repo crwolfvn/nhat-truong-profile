@@ -5,9 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nguyễn Thế Nhật Trường — Supply Chain &amp; Logistics</title>
 <meta name="description" content="Brian Nguyễn — 14 năm điều phối Kế hoạch, Kho vận &amp; Chuỗi cung ứng giữa nhà máy Việt Nam và thị trường EU / US / UK.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink-navy:#0f1f33;
@@ -32,17 +29,17 @@
     margin:0;
     background:var(--paper);
     color:var(--ink);
-    font-family:'IBM Plex Sans', sans-serif;
+    font-family:'Times New Roman', Times, serif;
     line-height:1.55;
     -webkit-font-smoothing:antialiased;
   }
   h1,h2,h3{
-    font-family:'Space Grotesk', sans-serif;
+    font-family:'Times New Roman', Times, serif;
     margin:0;
     letter-spacing:-0.01em;
   }
   .mono{
-    font-family:'IBM Plex Mono', monospace;
+    font-family:'Times New Roman', Times, serif;
   }
   a{color:inherit;}
   img{max-width:100%; display:block;}
@@ -66,7 +63,7 @@
     height:74px;
     border-radius:50%;
     border:2px dashed currentColor;
-    font-family:'IBM Plex Mono', monospace;
+    font-family:'Times New Roman', Times, serif;
     font-size:9px;
     letter-spacing:0.14em;
     text-align:center;
@@ -104,7 +101,7 @@
     align-items:center;
   }
   .eyebrow{
-    font-family:'IBM Plex Mono', monospace;
+    font-family:'Times New Roman', Times, serif;
     font-size:12px;
     letter-spacing:0.22em;
     text-transform:uppercase;
@@ -128,7 +125,7 @@
   }
   .hero h1 .alias{
     display:block;
-    font-family:'IBM Plex Mono', monospace;
+    font-family:'Times New Roman', Times, serif;
     font-size:0.32em;
     font-weight:500;
     text-transform:none;
@@ -157,12 +154,12 @@
   }
   .stat b{
     display:block;
-    font-family:'Space Grotesk', sans-serif;
+    font-family:'Times New Roman', Times, serif;
     font-size:1.9rem;
     color:var(--cargo-amber);
   }
   .stat span{
-    font-family:'IBM Plex Mono', monospace;
+    font-family:'Times New Roman', Times, serif;
     font-size:11px;
     letter-spacing:0.08em;
     text-transform:uppercase;
@@ -198,7 +195,7 @@
     justify-content:space-between;
     align-items:flex-end;
     margin-top:14px;
-    font-family:'IBM Plex Mono', monospace;
+    font-family:'Times New Roman', Times, serif;
     font-size:10.5px;
     letter-spacing:0.06em;
     color:var(--cloud-soft);
@@ -230,7 +227,7 @@
   }
   .lanes .section-head h2{ color:var(--cloud); }
   .section-tag{
-    font-family:'IBM Plex Mono', monospace;
+    font-family:'Times New Roman', Times, serif;
     font-size:11px;
     letter-spacing:0.14em;
     text-transform:uppercase;
@@ -259,17 +256,17 @@
   .lane-hub-ring{ fill:none; stroke:var(--cloud); stroke-width:1.6; }
   .lane-hub-dot{ fill:var(--cloud); }
   .lane-label{
-    font-family:'IBM Plex Mono', monospace;
+    font-family:'Times New Roman', Times, serif;
     font-size:13px;
     fill:var(--cloud);
   }
   .lane-sub{
-    font-family:'IBM Plex Mono', monospace;
+    font-family:'Times New Roman', Times, serif;
     font-size:10.5px;
     fill:var(--cloud-soft);
   }
   .lane-hub-label{
-    font-family:'Space Grotesk', sans-serif;
+    font-family:'Times New Roman', Times, serif;
     font-weight:600;
     font-size:15px;
     fill:var(--cloud);
@@ -314,8 +311,32 @@
     margin-bottom:44px;
   }
 
-  .timeline{
+  .company-group{
+    margin-bottom:8px;
+  }
+  .company-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:6px 18px;
+    padding:11px 18px;
+    background:var(--paper-raised);
+    border-left:3px solid var(--stamp-red);
     border-top:1px solid var(--paper-line);
+  }
+  .company-head h3{
+    font-size:1.05rem;
+    text-transform:uppercase;
+    letter-spacing:0.02em;
+  }
+  .company-range{
+    font-size:0.82rem;
+    color:var(--ink-soft);
+    white-space:nowrap;
+  }
+  .company-group:last-child .t-row:last-child{
+    border-bottom:1px solid var(--paper-line);
   }
   .t-row{
     display:grid;
@@ -326,7 +347,7 @@
     align-items:start;
   }
   .t-date{
-    font-family:'IBM Plex Mono', monospace;
+    font-family:'Times New Roman', Times, serif;
     font-size:0.92rem;
     color:var(--stamp-red);
     padding-top:2px;
@@ -357,7 +378,7 @@
   .t-current{
     display:inline-block;
     margin-left:10px;
-    font-family:'IBM Plex Mono', monospace;
+    font-family:'Times New Roman', Times, serif;
     font-size:10px;
     letter-spacing:0.1em;
     color:var(--stamp-red);
@@ -384,58 +405,7 @@
     position:absolute;
     left:0;
     color:var(--cargo-amber);
-    font-family:'IBM Plex Mono', monospace;
-  }
-
-  /* ---- Earlier chapters ---- */
-  .earlier{
-    margin-top:56px;
-  }
-  .earlier-head{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px;
-    letter-spacing:0.16em;
-    text-transform:uppercase;
-    color:var(--ink-soft);
-    margin-bottom:20px;
-  }
-  .earlier-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
-  }
-  .earlier-card{
-    background:var(--paper-raised);
-    border:1px solid var(--paper-line);
-    padding:24px;
-    border-radius:2px;
-  }
-  .earlier-card .dur{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px;
-    color:var(--cargo-amber);
-    text-transform:uppercase;
-    letter-spacing:0.06em;
-  }
-  .earlier-card h3{
-    font-size:1.05rem;
-    margin:8px 0 10px;
-  }
-  .earlier-card ul{
-    margin:0; padding:0; list-style:none;
-    display:grid; gap:7px;
-  }
-  .earlier-card li{
-    font-size:0.88rem;
-    color:var(--ink-soft);
-    padding-left:16px;
-    position:relative;
-  }
-  .earlier-card li::before{
-    content:"—";
-    position:absolute; left:0;
-    color:var(--stamp-red);
-    font-family:'IBM Plex Mono', monospace;
+    font-family:'Times New Roman', Times, serif;
   }
 
   /* ================= CAPABILITIES (ledger) ================= */
@@ -462,7 +432,7 @@
     border-bottom:1px dotted var(--paper-line);
   }
   .ledger-item .num{
-    font-family:'IBM Plex Mono', monospace;
+    font-family:'Times New Roman', Times, serif;
     font-size:0.78rem;
     color:var(--stamp-red);
     flex:none;
@@ -515,7 +485,7 @@
     margin:0; padding:0;
     display:grid;
     gap:12px;
-    font-family:'IBM Plex Mono', monospace;
+    font-family:'Times New Roman', Times, serif;
     font-size:0.92rem;
   }
   .contact-list a{
@@ -530,7 +500,7 @@
     margin-top:40px;
     padding-top:20px;
     border-top:1px solid rgba(247,244,234,0.15);
-    font-family:'IBM Plex Mono', monospace;
+    font-family:'Times New Roman', Times, serif;
     font-size:11px;
     color:var(--cloud-soft);
     display:flex;
@@ -544,8 +514,8 @@
     .hero-inner{ grid-template-columns:1fr; }
     .id-card{ max-width:340px; }
     .lane-legend{ grid-template-columns:1fr; }
-    .earlier-grid{ grid-template-columns:1fr; }
     .t-row{ grid-template-columns:110px 20px 1fr; }
+    .company-head{ padding:11px 14px; }
     .ledger-item{ flex-wrap:wrap; }
     .ledger-item .detail{ max-width:100%; text-align:left; flex-basis:100%; }
     .ledger-item .fill{ display:none; }
@@ -592,7 +562,7 @@
       <div class="id-meta">
         <div>
           <div>PLANNING &amp; LOGISTICS MANAGER</div>
-          <div>VIETNAM · SINCE 2013</div>
+          <div>VIETNAM · SINCE 2011</div>
         </div>
         <div class="stamp">KEY&nbsp;ERP<br>USER</div>
       </div>
@@ -665,81 +635,124 @@
       <span class="section-tag">Manifest</span>
     </div>
     <p class="manifest-copy">
-      10 năm gắn bó với một công ty duy nhất, đi từ người trực tiếp kiểm đếm hàng trong kho đến người
-      hoạch định năng lực sản xuất và báo cáo cho Ban lãnh đạo Tập đoàn.
+      15 năm qua 4 công ty: từ Assistant Sales Manager trong ngành vận tải, qua Marketing và Customer Service
+      cho thị trường US/UK, đến hành trình 9 năm hiện tại tại Modelleisenbahn Vietnam — nơi được thăng chức
+      liên tục từ Warehouse Team Leader lên Planning &amp; Logistics Manager. Sắp xếp từ gần nhất đến xa nhất.
     </p>
 
     <div class="timeline">
-      <div class="t-row">
-        <div class="t-date">2017 – 2018<small>17 tháng</small></div>
-        <div class="t-line"></div>
-        <div class="t-role">
-          <h3>Warehouse Team Leader</h3>
-          <p class="t-desc">Trực tiếp quản lý ghi nhận biến động Nguyên vật liệu / Bán thành phẩm / Thành phẩm trong kho.</p>
+
+      <!-- ===== Modelleisenbahn Vietnam (current) ===== -->
+      <div class="company-group">
+        <div class="company-head">
+          <h3>Modelleisenbahn Vietnam</h3>
+          <span class="company-range">Mar 2017 – Present · 9 năm 5 tháng · Full-time · Việt Nam</span>
+        </div>
+
+        <div class="t-row">
+          <div class="t-date">2021 – Nay<small>Hiện tại</small></div>
+          <div class="t-line"></div>
+          <div class="t-role">
+            <h3>Planning &amp; Logistics Manager <span class="t-current">CURRENT</span></h3>
+            <p class="t-desc">Thăng chức nội bộ — hoạch định và điều phối toàn bộ chuỗi cung ứng nhà máy.</p>
+            <ul class="t-bullets">
+              <li>Quản lý nguyên vật liệu cho sản xuất từ Mua hàng Nội địa &amp; Nước ngoài, đảm bảo sẵn sàng đúng tiến độ</li>
+              <li>Kết nối với đội Supply Chain tại EU để điều phối Thành phẩm từ Việt Nam sang EU</li>
+              <li>Xây dựng Công cụ Hoạch định hàng tháng dự báo 4 tháng tới và phân tích phân bổ năng lực sản xuất</li>
+              <li>Thành viên Key User của hệ thống ERP đầu tiên (BaaN) từ công ty mẹ — đào tạo và hỗ trợ các phòng ban khác</li>
+              <li>Tham gia đội Key User xây dựng và kiểm thử hệ thống ERP mới</li>
+              <li>Chuẩn bị báo cáo định kỳ cho Ban lãnh đạo Tập đoàn: sản lượng hàng ngày, tồn đọng &amp; dự án mở hàng tuần, tình trạng sản xuất so với mục tiêu năm, chi phí vận chuyển hàng không hàng tháng</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="t-row">
+          <div class="t-date">2020 – 2021<small>15 tháng</small></div>
+          <div class="t-line"></div>
+          <div class="t-role">
+            <h3>Warehouse Manager</h3>
+            <p class="t-desc">Thăng chức nội bộ — chịu trách nhiệm toàn bộ hệ thống kho, xây dựng từ đầu và dời kho 5 lần theo đà phát triển của công ty, từ 1 lên 6 tòa nhà.</p>
+          </div>
+        </div>
+
+        <div class="t-row">
+          <div class="t-date">2018 – 2019<small>12 tháng</small></div>
+          <div class="t-line"></div>
+          <div class="t-role">
+            <h3>Warehouse Supervisor</h3>
+            <p class="t-desc">Thăng chức nội bộ — giám sát kiểm kê định kỳ hàng tháng, hàng quý, hàng năm.</p>
+          </div>
+        </div>
+
+        <div class="t-row">
+          <div class="t-date">2017 – 2018<small>17 tháng</small></div>
+          <div class="t-line"></div>
+          <div class="t-role">
+            <h3>Warehouse Team Leader</h3>
+            <p class="t-desc">Vị trí khởi điểm tại công ty — trực tiếp quản lý ghi nhận biến động Nguyên vật liệu / Bán thành phẩm / Thành phẩm trong kho.</p>
+          </div>
         </div>
       </div>
 
-      <div class="t-row">
-        <div class="t-date">2018 – 2019<small>12 tháng</small></div>
-        <div class="t-line"></div>
-        <div class="t-role">
-          <h3>Warehouse Supervisor</h3>
-          <p class="t-desc">Giám sát kiểm kê định kỳ hàng tháng, hàng quý, hàng năm; điều phối kho qua các lần mở rộng nhà xưởng.</p>
+      <!-- ===== Indochina Ambiente GmbH ===== -->
+      <div class="company-group">
+        <div class="company-head">
+          <h3>Indochina Ambiente GmbH</h3>
+          <span class="company-range">Mar 2015 – Mar 2017 · 2 năm 1 tháng · Full-time · Việt Nam</span>
+        </div>
+        <div class="t-row">
+          <div class="t-date">2015 – 2017<small>2 năm 1 tháng</small></div>
+          <div class="t-line"></div>
+          <div class="t-role">
+            <h3>Customer Service Supervisor</h3>
+            <p class="t-desc">Chuyển công ty — dịch vụ khách hàng US/UK cho nội — ngoại thất &amp; gốm sân vườn.</p>
+            <ul class="t-bullets">
+              <li>Xây dựng gian hàng tại hội chợ thương mại trong nước và quốc tế để tìm khách hàng mới</li>
+              <li>Làm việc sát với đội Sản xuất từ Nhà cung cấp để tùy chỉnh sản phẩm theo yêu cầu</li>
+              <li>Theo dõi từ Báo giá, Đơn hàng, Đặt cọc, Giao hàng đến Thanh toán cho đến khi hoàn tất lô hàng</li>
+              <li>Giữ liên lạc với khách hàng để nhận phản hồi, xử lý vấn đề phát sinh và nhận đơn hàng mới</li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <div class="t-row">
-        <div class="t-date">2020 – 2021<small>15 tháng</small></div>
-        <div class="t-line"></div>
-        <div class="t-role">
-          <h3>Warehouse Manager</h3>
-          <p class="t-desc">Chịu trách nhiệm toàn bộ hệ thống kho — xây dựng từ đầu và dời kho 5 lần theo đà phát triển của công ty, từ 1 lên 6 tòa nhà.</p>
+      <!-- ===== NLG Belts Co., Ltd ===== -->
+      <div class="company-group">
+        <div class="company-head">
+          <h3>NLG Belts Co., Ltd</h3>
+          <span class="company-range">Jan 2014 – Feb 2015 · 1 năm 2 tháng · Full-time · Việt Nam</span>
+        </div>
+        <div class="t-row">
+          <div class="t-date">2014 – 2015<small>1 năm 2 tháng</small></div>
+          <div class="t-line"></div>
+          <div class="t-role">
+            <h3>Marketing Manager</h3>
+            <p class="t-desc">Chuyển công ty — phụ trách Marketing.</p>
+          </div>
         </div>
       </div>
 
-      <div class="t-row">
-        <div class="t-date">2021 – 2026<small>Hiện tại</small></div>
-        <div class="t-line"></div>
-        <div class="t-role">
-          <h3>Planning &amp; Logistics Manager <span class="t-current">CURRENT</span></h3>
-          <p class="t-desc">Hoạch định và điều phối toàn bộ chuỗi cung ứng nội bộ nhà máy.</p>
-          <ul class="t-bullets">
-            <li>Quản lý nguyên vật liệu cho sản xuất từ Mua hàng Nội địa &amp; Nước ngoài, đảm bảo sẵn sàng đúng tiến độ</li>
-            <li>Kết nối với đội Supply Chain tại EU để điều phối Thành phẩm từ Việt Nam sang EU</li>
-            <li>Xây dựng Công cụ Hoạch định hàng tháng dự báo 4 tháng tới và phân tích phân bổ năng lực sản xuất</li>
-            <li>Thành viên Key User của hệ thống ERP đầu tiên (BaaN) từ công ty mẹ — đào tạo và hỗ trợ các phòng ban khác</li>
-            <li>Tham gia đội Key User xây dựng và kiểm thử hệ thống ERP mới</li>
-            <li>Chuẩn bị báo cáo định kỳ cho Ban lãnh đạo Tập đoàn: sản lượng hàng ngày, tồn đọng &amp; dự án mở hàng tuần, tình trạng sản xuất so với mục tiêu năm, chi phí vận chuyển hàng không hàng tháng</li>
-          </ul>
+      <!-- ===== AA Transport and Logistics Co., Ltd ===== -->
+      <div class="company-group">
+        <div class="company-head">
+          <h3>AA Transport and Logistics Co., Ltd</h3>
+          <span class="company-range">Jun 2011 – Nov 2013 · 2 năm 6 tháng · Full-time · Việt Nam</span>
+        </div>
+        <div class="t-row">
+          <div class="t-date">2011 – 2013<small>2 năm 6 tháng</small></div>
+          <div class="t-line"></div>
+          <div class="t-role">
+            <h3>Assistant Sales Manager</h3>
+            <p class="t-desc">Điểm khởi đầu sự nghiệp — dịch vụ khai báo hải quan &amp; vận chuyển nội địa.</p>
+            <ul class="t-bullets">
+              <li>Thực hiện thủ tục hải quan cho lô hàng xuất / nhập khẩu theo yêu cầu</li>
+              <li>Giữ liên lạc với khách hàng để chuẩn bị đầy đủ chứng từ cần thiết</li>
+              <li>Điều phối vận chuyển nội địa từ / đến cảng biển và sân bay</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="earlier">
-      <div class="earlier-head">Trước đó — 4 năm nền tảng</div>
-      <div class="earlier-grid">
-        <div class="earlier-card">
-          <div class="dur">2 năm</div>
-          <h3>US / UK Customer Service Supervisor</h3>
-          <p style="font-size:0.9rem;color:var(--ink-soft);margin:0 0 10px;">Ngành nội — ngoại thất &amp; gốm sân vườn</p>
-          <ul>
-            <li>Xây dựng gian hàng tại hội chợ thương mại trong nước và quốc tế để tìm khách hàng mới</li>
-            <li>Làm việc sát với đội Sản xuất từ Nhà cung cấp để tùy chỉnh sản phẩm theo yêu cầu</li>
-            <li>Theo dõi từ Báo giá, Đơn hàng, Đặt cọc, Giao hàng đến Thanh toán cho đến khi hoàn tất lô hàng</li>
-            <li>Giữ liên lạc với khách hàng để nhận phản hồi, xử lý vấn đề phát sinh và nhận đơn hàng mới</li>
-          </ul>
-        </div>
-        <div class="earlier-card">
-          <div class="dur">2 năm</div>
-          <h3>Customs Broker &amp; Local Transport</h3>
-          <p style="font-size:0.9rem;color:var(--ink-soft);margin:0 0 10px;">Dịch vụ khai báo hải quan &amp; vận chuyển nội địa</p>
-          <ul>
-            <li>Thực hiện thủ tục hải quan cho lô hàng xuất / nhập khẩu theo yêu cầu</li>
-            <li>Giữ liên lạc với khách hàng để chuẩn bị đầy đủ chứng từ cần thiết</li>
-            <li>Điều phối vận chuyển nội địa từ / đến cảng biển và sân bay</li>
-          </ul>
-        </div>
-      </div>
     </div>
   </div>
 </section>
